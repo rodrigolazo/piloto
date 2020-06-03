@@ -1,0 +1,18 @@
+
+{% extends "plantilla1.html" %}
+{% block title %}Editar{% endblock title %}
+
+
+{% block titulo %} Editar persona {% endblock titulo %}
+
+
+{% block contenido %}
+<form method="POST">{% csrf_token %}
+ 
+ {{ formulario }}
+ 
+ <input type="submit" value="Editar" />
+ 
+</form>
+
+{% endblock contenido %}

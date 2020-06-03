@@ -1,0 +1,33 @@
+
+{% extends "plantilla1.html" %}
+{% block title %}Tablas{% endblock title %}
+
+{% block titulo %} Tabla de personas {% endblock titulo %}
+
+
+{% block contenido %}
+<table border="1">
+ <thead>
+  <tr>
+   <th>Nombres</th>
+   <th>Edad</th>
+   <th>Aficion</th>
+   <th>Modificar/Eliminar</th>
+  </tr>
+ </thead>
+ <tbody>
+  {% for persona in personas %}
+  <tr>
+   <td>{{ persona.nombre }}</td>
+   <td>{{ persona.edad }}</td>
+   <td>{{ persona.aficion }}</td>
+   <td><a href="/editar/{{persona.id}}">Modificar</a> | <a href="/borrar/{{persona.id}}">Eliminar</a></td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="4">No hay personas registradas</td></tr>
+  {% endfor %}
+ </tbody>
+</table>
+
+{% endblock contenido %}
+
